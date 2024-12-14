@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    font-family: 'Times New Roman', sans-serif;
+
+
+}
+
+.d-flex {
+    display: flex;
+}
+
+.j-center {
+    justify-content: center;
+}
+
+.j-between {
+    justify-content: space-between;
+}
+
+.j-around {
+    justify-content: space-around;
+}
+
+.j-end {
+    justify-content: end;
+}
+
+.a-center {
+    align-items: center;
+}
+
+.a-stretch {
+    align-items: stretch;
+}
+
+.a-end {
+    align-items: flex-end;
+}
+
+.direction-col {
+    flex-direction: column;
+}
+
+.grow1 {
+    flex: 1;
+}
+
+.grow2 {
+    flex: 2;
+}
+
+.grow3 {
+    flex: 3;
+}
+
+.grow4 {
+    flex: 4;
+}
+
+.grow5 {
+    flex: 5;
+}
+
+.gap10 {
+    gap: 10px
+}
+
+.gap20 {
+    gap: 20px
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.p10 {
+    padding: 10px;
+}
+
+.p20 {
+    padding: 20px;
+}
+
+.mt3 {
+    margin-top: 30px;
+}
+
+.mt5 {
+    margin-top: 50px;
+}
+
+.mb5 {
+    margin-bottom: 50px;
+}
+
+.mt10 {
+    margin-top: 100px;
+}
+
+.mb10 {
+    margin-bottom: 100px;
+}
+
+.ml1 {
+    margin-left: 10px;
+}
+
+.order1 {
+    order: 1;
+}
+
+.order2 {
+    order: 2;
+}
+
+.order3 {
+    order: 3;
+}
+
+/*INDIVIDUAL CLASSES*/
+
+
+.gameGrid {
+    width: 900px;
+    height: 900px;
+    background-color: #BFDBAE;
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    gap: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    background-image: url("https://logos-world.net/wp-content/uploads/2023/03/Monopoly-Logo-2008.png");
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-size: 500px;
+    position: relative;
+}
+
+
+
+.property-info {
+    text-align: center;
+    font-size: 10px;
+    font-weight: normal;
+    color: #333;
+}
+
+.property-name {
+    font-size: 12px;
+    font-weight: bold;
+    color: #2A2A2A;
+}
+
+.property-price {
+    font-size: 13px;
+    color: red;
+    font-weight: bold;
+}
+
+.player1 {
+    position: absolute;
+    text-align: center;
+}
+.player2 {
+    position: absolute;
+    text-align: end;
+    font-size: 30px;
+}
+.player1Icon {
+    width: 70px;
+}
+.player2Icon {
+    width: 70px;
+}
+
+.cardIcon {
+    width: 50px;
+}
+.property-color {
+    height: 14px;
+    margin-bottom: 4px;
+    width: 100%;
+    border-radius: 4px;
+}
+.property-color.brown { background-color: #80481b; }
+.property-color.light-blue { background-color: #09b0f1; }
+.property-color.pink { background-color: #da7cc7; }
+.property-color.orange { background-color: #ff7900; }
+.property-color.red { background-color: #c80c0c; }
+.property-color.yellow { background-color: #dadc0a; }
+.property-color.green { background-color: #34a107; }
+.property-color.dark-blue { background-color: #02288a; }
+
+.chanceImg {
+    height: 30px;
+    margin-top: 5px;
+}
+
+.luxuryTax, .waterWorks, .train, .goImg, .parking, .jail, .goJail, .incomeTax, .chest {
+    width: 35px;
+}
+
+
+.playersCard {
+    max-width: 420px;
+}
+
+.Player1Card,
+.Player2Card {
+    width: 700px;
+    height: 220px;
+    background-color: #f0f0f0;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Player1Card span,
+.Player2Card span {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.Player1Card button,
+.Player2Card button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 250px;
+}
+
+.Player1Card button:hover,
+.Player2Card button:hover {
+    background-color: #45a049;
+}
+
+button:focus {
+    outline: none;
+}
+.house {
+    width: 30px;
+}
+.topborder{
+    border-top: #3a9825 1px solid;
+    padding: 10px;
+}
+
