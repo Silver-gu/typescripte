@@ -145,23 +145,30 @@ function calculateRent(property, playerIndex) {
     }
     return rent;
 }
+function updateInfobox(message) {
+    const infobox = document.querySelector('.infobox');
+    const logMessage = document.createElement('p');
+    logMessage.textContent = message; // Set the log message text
+    infobox.appendChild(logMessage); // Append the new log to the infobox
+    infobox.scrollTop = infobox.scrollHeight; // Auto-scroll to the bottom
+}
 function collectMoney(playerIndex) {
     playerBalances[playerIndex] += 200;
-    console.log(`200 collected!`);
+    updateInfobox(`Player ${playerIndex + 1} collected $200.`);
 }
 function buyProperty(playerIndex) {
     const currentPosition = playerPos[playerIndex];
     const property = monopolyBoard[currentPosition];
     if (!property || (property.type !== "property" && property.type !== "railroad" && property.type !== "utility")) {
-        alert("Can't buy!");
+        updateInfobox("Can't buy this property!");
         return;
     }
     if (property.owner !== undefined) {
-        alert("This property is already owned!");
+        updateInfobox("This property is already owned!");
         return;
     }
     if (playerBalances[playerIndex] < property.price) {
-        alert("You don't have enough money to buy this property!");
+        updateInfobox("You don't have enough money to buy this property!");
         return;
     }
     playerBalances[playerIndex] -= property.price;
@@ -203,7 +210,7 @@ rollDicePlayer1.onclick = () => {
     }
     const res = Math.ceil(Math.random() * 6);
     playerPos[0] += res;
-    console.log(`Player 1 rolled ${res}`);
+    updateInfobox(`Player 1 rolled ${res}`);
     if (playerPos[0] > 35) {
         playerPos[0] -= 36;
         collectMoney(0);
@@ -215,7 +222,7 @@ rollDicePlayer1.onclick = () => {
         }
         else {
             playerBalances[0] -= currentProperty.amount;
-            console.log(`Player 1 landed on a tax space and must pay $${currentProperty.amount}.`);
+            updateInfobox(`Player 1 landed on a tax space and must pay $${currentProperty.amount}.`);
         }
     }
     const rent = calculateRent(currentProperty, 0);
@@ -223,10 +230,7 @@ rollDicePlayer1.onclick = () => {
         if (playerBalances[0] >= rent) {
             playerBalances[0] -= rent;
             playerBalances[currentProperty.owner] += rent;
-            console.log(`Player 1 landed on ${currentProperty.name} and paid rent of $${rent}.`);
-        }
-        else {
-            console.log(`Player 1 cannot afford the rent of $${rent}.`);
+            updateInfobox(`Player 1 landed on ${currentProperty.name} and paid rent of $${rent}.`);
         }
     }
     updateBoard();
@@ -235,12 +239,12 @@ rollDicePlayer1.onclick = () => {
 };
 rollDicePlayer2.onclick = () => {
     if (currentPlayerTurn !== 1) {
-        alert("Player 1's turn");
+        updateInfobox("Player 1's turn");
         return;
     }
     const res = Math.ceil(Math.random() * 6);
     playerPos[1] += res;
-    console.log(`Player 2 rolled ${res}`);
+    updateInfobox(`Player 2 rolled ${res}`);
     if (playerPos[1] > 35) {
         playerPos[1] -= 36;
         collectMoney(1);
@@ -252,7 +256,7 @@ rollDicePlayer2.onclick = () => {
         }
         else {
             playerBalances[1] -= currentProperty.amount;
-            console.log(`Player 2 landed on a tax space and must pay $${currentProperty.amount}.`);
+            updateInfobox(`Player 2 landed on a tax space and must pay $${currentProperty.amount}.`);
         }
     }
     const rent = calculateRent(currentProperty, 1);
@@ -260,10 +264,10 @@ rollDicePlayer2.onclick = () => {
         if (playerBalances[1] >= rent) {
             playerBalances[1] -= rent;
             playerBalances[currentProperty.owner] += rent;
-            console.log(`Player 2 landed on ${currentProperty.name} and paid rent of $${rent}.`);
+            updateInfobox(`Player 2 landed on ${currentProperty.name} and paid rent of $${rent}.`);
         }
         else {
-            console.log(`Player 2 cannot afford the rent of $${rent}.`);
+            updateInfobox(`Player 2 can't afford the tax of $${currentProperty.amount}`);
         }
     }
     updateBoard();

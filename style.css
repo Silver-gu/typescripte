@@ -2,6 +2,12 @@
 
 body {
     font-family: 'Times New Roman', sans-serif;
+    background-image: url('https://www.dexerto.com/cdn-image/wp-content/uploads/2024/06/09/Monopoly-Go-events-today.jpg?width=1200&quality=60&format=auto'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    margin: 0;
+    height: 100vh;
 
 
 }
@@ -123,8 +129,6 @@ body {
 }
 
 /*INDIVIDUAL CLASSES*/
-
-
 .gameGrid {
     width: 900px;
     height: 900px;
@@ -133,6 +137,7 @@ body {
     grid-template-columns: repeat(11, 1fr);
     grid-template-rows: repeat(9, 1fr);
     gap: 5px;
+    border: #2A2A2A 2px solid;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -260,3 +265,44 @@ button:focus {
     padding: 10px;
 }
 
+.infobox {
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: #BFDBAE;
+    border: 1px solid #100f0f;
+    border-radius: 8px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+}
+
+
+.infobox p {
+    margin: 5px 0;
+    padding: 5px;
+    background-color: #e8f4e8;
+    border-radius: 4px;
+}
+.info{
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #08a1cd;
+}
+
+.infobox::-webkit-scrollbar {
+    width: 8px;
+}
+
+.infobox::-webkit-scrollbar-thumb {
+    background-color: #5c6a55;
+    border-radius: 4px;
+}
+
+.infobox::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
